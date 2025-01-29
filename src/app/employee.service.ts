@@ -10,7 +10,9 @@ export class EmployeeService {
 
   private apiUrl = 'http://localhost:8080/employee';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log('HttpClient dependency injected:', this.http);
+  }
 
   public getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(`${this.apiUrl}/employee/all`);
