@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class UsercardComponent implements OnInit {
 
-  users: any[] = [];  // Variable, um die Daten zu speichern
+  users: Employee[] = [];  // Variable, um die Daten zu speichern
   errorMessage: string = '';  // Variable für Fehlernachrichten
 
   constructor(private http: HttpClient) {}
@@ -23,7 +23,7 @@ export class UsercardComponent implements OnInit {
   }
 
   fetchData() {
-    this.http.get<any[]>('http://localhost:8080/employee/all')
+    this.http.get<Employee[]>('http://localhost:8080/employee/all')
       .subscribe(
         data => {
           this.users = data;  // Abgerufene Daten speichern

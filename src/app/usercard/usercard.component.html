@@ -1,15 +1,20 @@
 <div *ngIf="errorMessage" class="error-message">
-  {{ errorMessage }}  <!-- Fehlermeldung anzeigen, falls vorhanden -->
+  {{ errorMessage }}
 </div>
 
-<div *ngIf="users.length > 0; else noData">
-  <ul>
-    <li *ngFor="let user of users">
-      <p>{{ user.name }}</p>  <!-- Beispiel für das Anzeigen des Namens des Benutzers -->
-      <p>{{ user.email }}</p> <!-- Beispiel für das Anzeigen der E-Mail-Adresse des Benutzers -->
-    </li>
-  </ul>
+<div class="user-cards">
+  <div class="user-card" *ngFor="let user of users">
+    <img [src]="user.imageUrl" alt="{{ user.name }}" class="profile-img" />
+    <div class="user-info">
+      <h3>{{ user.name }}</h3>
+      <p>Email: {{ user.email }}</p>
+      <p>Job: {{ user.jobTitle }}</p>
+      <p>Telefon: {{ user.phone }}</p>
+      <p>Mitarbeiter-Code: {{ user.employeeCode }}</p>
+    </div>
+  </div>
 </div>
+
 <ng-template #noData>
-  <p>Keine Daten verfügbar</p>  <!-- Nachricht anzeigen, wenn keine Daten vorhanden sind -->
+  <p>Keine Daten verfügbar</p>
 </ng-template>
