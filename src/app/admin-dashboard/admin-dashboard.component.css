@@ -1,11 +1,11 @@
 .admin-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Die Elemente etwas weiter auseinander anordnen */
-    gap: 30px; /* Abstand zwischen den Elementen */
+    justify-content: space-around; 
+    gap: 30px;
     padding: 20px;
-    max-width: 1200px; /* Maximale Breite für größere Bildschirme */
-    margin: 0 auto; /* Zentriert den Container */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -16,8 +16,8 @@ h2 {
     text-align: center;
     background-color: #fff;
     margin: 0;
-    width: 100%; /* Überschriften füllen den Container aus */
-    max-width: 500px; /* Maximale Breite für die Überschriften */
+    width: 100%; 
+    max-width: 500px;
     font-size: 20px;
     font-weight: bold;
     color: #333;
@@ -171,5 +171,66 @@ button {
 }
 
 button:hover {
+    background-color: darkgrey;
+}
+
+#changeUser-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#changeUser {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 480px; /* Maximale Breite */
+    margin: 0 auto; /* Zentriert die Formulare */
+}
+
+
+#changeUser label {
+    width: 150px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    display: block;
+}
+
+#changeUser input{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease-in-out;
+    flex: 1;
+    padding: 5px;
+}
+
+#changeUser input:focus{
+    border-color: #888;
+}
+
+#changeUser input[type="submit"] {
+    position: relative;
+}
+
+#changeUser input[type="submit"]:hover{
     background-color: darkgrey;
 }

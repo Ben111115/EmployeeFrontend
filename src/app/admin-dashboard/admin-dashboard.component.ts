@@ -18,6 +18,8 @@ export class AdminDashboardComponent {
   searchQuery = ''; // Suchanfrage des Benutzers wird hier gespeichert
   searchResults: any[] = []; // Array für Suchergebnisse
   selectedUser: any = null;
+  changeUserisVisible = false;
+  adminisVidible = true;
 
   constructor(private employeeService: EmployeeService) {}
 
@@ -79,14 +81,12 @@ export class AdminDashboardComponent {
     );
   }
   
-  // Methode wenn ein Nutzer aus der Liste ausgewählt wird
   onSelect(user: any) {
     this.selectedUser = user; // Setzt die selectedUser Variable auf den ausgewählten Benutzer
     this.searchQuery = '';
     this.searchResults = [];
   }
 
-  // Button Funktion
   onAction() {
     console.log('Aktion für', this.selectedUser.name); 
   }
@@ -101,5 +101,67 @@ export class AdminDashboardComponent {
         alert("Fehler beim Löschen des Elements: " + error.message);
       }
     })
+  }
+
+  toggleOn(){
+    this.changeUserisVisible = true;
+    this.adminisVidible = false;
+  }
+
+  transmit(){
+    (document.getElementById('cname') as HTMLInputElement).value = this.selectedUser.name;
+    (document.getElementById('cemail') as HTMLInputElement).value = this.selectedUser.email;
+    (document.getElementById('cjobTitle') as HTMLInputElement).value = this.selectedUser.jobTitle;
+    (document.getElementById('cphone') as HTMLInputElement).value = this.selectedUser.phone;
+    (document.getElementById('cimageUrl') as HTMLInputElement).value = this.selectedUser.imageUrl;
+    (document.getElementById('cemployeeCode') as HTMLInputElement).value = this.selectedUser.employeeCode;
+  }
+
+  toggleOff(){
+    this.changeUserisVisible = false;
+    this.adminisVidible = true;
+  }
+
+  changeUser(){
+
+    const id = this.selectedUser.id;
+    const name = (document.getElementById('cname') as HTMLInputElement).value;
+    const email = (document.getElementById('cemail') as HTMLInputElement).value;
+    const jobTitle = (document.getElementById('cjobTitle') as HTMLInputElement).value;
+    const phone = (document.getElementById('cphone') as HTMLInputElement).value;
+    const imageUrl = (document.getElementById('cimageUrl') as HTMLInputElement).value;
+    const employeeCode = (document.getElementById('cemployeeCode') as HTMLInputElement).value;
+
+    const formData = {
+      id,
+      name,
+      email,
+      jobTitle,
+      phone,
+      imageUrl,
+      employeeCode
+    };
+
+    this.employee = formData;
+
+    (document.getElementById('cname') as HTMLInputElement).value = '';
+    (document.getElementById('cemail') as HTMLInputElement).value = '';
+    (document.getElementById('cjobTitle') as HTMLInputElement).value = '';
+    (document.getElementById('cphone') as HTMLInputElement).value = '';
+    (document.getElementById('cimageUrl') as HTMLInputElement).value = '';
+    (document.getElementById('cemployeeCode') as HTMLInputElement).value = '';
+
+    this.updateData();
+    this.toggleOff();
+  }
+
+  updateData(){
+    this.employeeService.updateEmployee(this.employee).subscribe(response => {
+      console.log("Daten erfolgreich gespeichert:", response);
+      window.location.reload();
+      alert("Employee updatet");
+    }, error => {
+      console.error("Fehler beim Speichern der Daten:", error);
+    });
   }
 }

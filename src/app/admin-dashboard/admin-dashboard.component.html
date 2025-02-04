@@ -1,4 +1,4 @@
-<div class="admin-container">
+<div *ngIf="adminisVidible" class="admin-container">
     <h2 id="CreateEmployee">Create Employee</h2>
     <h2 id="DeleteEmployee">Delete Employee</h2>
 
@@ -54,8 +54,46 @@
                 <p>Telefon: {{ selectedUser.phone }}</p>
                 <p>Mitarbeiter-Code: {{ selectedUser.employeeCode }}</p>
             </div>
-            <button>Change</button>
+            <button (click)="toggleOn()">Change</button>
             <button (click)="deleteUser()">Delete</button>
         </div>
     </div>
+</div>
+<div *ngIf="changeUserisVisible" id="changeUser-container">
+    <button (click)="transmit()">Übertragen</button>
+    <form id="changeUser" (ngSubmit)="changeUser()">
+        <div class="group">
+            <label for="name">Name:</label><br>
+            <input type="text" id="cname" name="name" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="email">E-Mail:</label><br>
+            <input type="email" id="cemail" name="email" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="jobTitle">JobTitle:</label><br>
+            <input type="text" id="cjobTitle" name="jobTitle" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="cphone" name="phone" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="imageUrl">ImageUrl:</label><br>
+            <input type="url" id="cimageUrl" name="imageUrl" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="employeeCode">EmployeeCode:</label><br>
+            <input type="text" id="cemployeeCode" name="employeeCode" required><br><br>
+        </div>
+        <div class="submitButton">
+            <input type="submit" value="absenden">
+        </div>
+    </form>
+    <button (click)="toggleOff()">Schließen</button>
 </div>
