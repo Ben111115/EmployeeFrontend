@@ -90,4 +90,16 @@ export class AdminDashboardComponent {
   onAction() {
     console.log('Aktion für', this.selectedUser.name); 
   }
+
+  deleteUser(){
+    this. employeeService.deleteEmployee(this.selectedUser.id).subscribe({
+      next: (response) => {
+        alert("Element wurde erfolgreich gelöscht");
+        this.selectedUser = "";
+      },
+      error: (error) => {
+        alert("Fehler beim Löschen des Elements: " + error.message);
+      }
+    })
+  }
 }
