@@ -1,31 +1,31 @@
 .user-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .user-card {
-    width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-    background-color: #fff;
-  }
-  
-  .profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .user-info p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #555;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user-card {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
   

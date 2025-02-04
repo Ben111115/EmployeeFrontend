@@ -14,19 +14,19 @@ export class EmployeeService {
     console.log('HttpClient dependency injected:', this.http);
   }
 
-  public getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${this.apiUrl}/employee/all`);
+  public getEmployees(searchQuery: string): Observable<Employee[]> {
+    return this.http.get<Employee[]>(`${this.apiUrl}/all`);
   }
 
   public addEmployee(employee: Employee): Observable<Employee> {
-    return this.http.post<Employee>(`${this.apiUrl}/employee/add`, employee);
+    return this.http.post<Employee>(`${this.apiUrl}/add`, employee);
   }
 
   public updateEmployee(employee: Employee): Observable<Employee> {
-    return this.http.put<Employee>(`${this.apiUrl}/employee/update`, employee);
+    return this.http.put<Employee>(`${this.apiUrl}/update`, employee);
   }
 
   public deleteEmployee(employeeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/employee/delete/${employeeId}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete/${employeeId}`);
   }
 }

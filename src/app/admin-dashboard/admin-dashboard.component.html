@@ -1,4 +1,59 @@
 <div class="admin-container">
-    <h2>Admin Dashboard</h2>
-    <button (click)="logout()">Logout</button>
+    <h2 id="CreateEmployee">Create Employee</h2>
+    <h2 id="DeleteEmployee">Delete Employee</h2>
+
+    <form id="createUser" (ngSubmit)="onSubmit()">
+        <div class="group">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="email">E-Mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="jobTitle">JobTitle:</label><br>
+            <input type="text" id="jobTitle" name="jobTitle" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="imageUrl">ImageUrl:</label><br>
+            <input type="url" id="imageUrl" name="imageUrl" required><br><br>
+        </div>
+
+        <div class="group">
+            <label for="employeeCode">EmployeeCode:</label><br>
+            <input type="text" id="employeeCode" name="employeeCode" required><br><br>
+        </div>
+        <div class="submitButton">
+            <input type="submit" value="absenden">
+        </div>
+    </form>
+
+    <div id="deleteUser">
+        <input id="search" [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="Name suchen">
+        <ul *ngIf="searchResults.length">
+            <li *ngFor="let result of searchResults" (click)="onSelect(result)">
+            {{ result.name }}
+            </li>
+        </ul>
+        <div class="user-card" *ngIf="selectedUser">
+            <img [src]="selectedUser.imageUrl" alt="{{ selectedUser.name }}" class="profile-img" />
+            <div class="user-info">
+                <h3>{{ selectedUser.name }}</h3>
+                <h4>ID: {{ selectedUser.id }}</h4>
+                <p>Email: {{ selectedUser.email }}</p>
+                <p>Job: {{ selectedUser.jobTitle }}</p>
+                <p>Telefon: {{ selectedUser.phone }}</p>
+                <p>Mitarbeiter-Code: {{ selectedUser.employeeCode }}</p>
+            </div>
+        </div>
+    </div>
 </div>

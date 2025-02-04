@@ -1,27 +1,166 @@
-h2{
-    width: 250px;
+.admin-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Die Elemente etwas weiter auseinander anordnen */
+    gap: 30px; /* Abstand zwischen den Elementen */
+    padding: 20px;
+    max-width: 1200px; /* Maximale Breite für größere Bildschirme */
+    margin: 0 auto; /* Zentriert den Container */
+}
+
+h2 {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
     background-color: #fff;
-    margin: 50px;
+    margin: 0;
+    width: 100%; /* Überschriften füllen den Container aus */
+    max-width: 500px; /* Maximale Breite für die Überschriften */
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
 }
 
-button {
-    padding: 0.5rem 1.5rem;
+#createUser {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 480px; /* Maximale Breite */
+    margin: 0 auto; /* Zentriert die Formulare */
+}
+
+.group{
+    display: flex;
+    align-items: center;
+}
+
+#createUser label {
+    width: 150px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    display: block;
+}
+
+#createUser input{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease-in-out;
+    flex: 1;
+    padding: 5px;
+}
+
+#createUser input:focus{
+    border-color: #888;
+}
+
+#createUser input[type="submit"] {
+    background-color: lightgrey;
+    color: #fff;
     border: none;
-    border-radius: 8px;
-    color: black;
-    font-size: 1rem;
+    max-width: 200px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
-    background-color: #e5e7eb;
     transition: background-color 0.3s;
-    position: relative;
-    margin: 10px;
 }
 
-button:hover {
-    background-color: #d1d5db;
+#createUser input[type="submit"]:hover{
+    background-color: darkgrey;
+}
+
+.submitButton{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+#deleteUser {
+    background-color: #fff;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto; /* Zentriert die Formulare */
+}
+
+#deleteUser div {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#deleteUser input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+}
+
+li {
+padding: 8px;
+cursor: pointer;
+}
+
+li:hover {
+background-color: #f0f0f0;
+}
+
+.user-card {
+width: 250px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+padding: 15px;
+text-align: center;
+background-color: #fff;
+}
+
+.profile-img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 10px;
+}
+
+.user-info p {
+margin: 5px 0;
+font-size: 14px;
+color: #555;
 }
