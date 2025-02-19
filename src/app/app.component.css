@@ -1,29 +1,19 @@
-body {
-    margin: 0;
-    padding: 0;
-}
 nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background-color: white;
-    padding: 1rem;
-    margin: 5px;
+    gap: 20px;
+    padding: 20px;
 }
 
 button {
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: darkgray;
     color: black;
-    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: #e5e7eb;
-    transition: background-color 0.3s;
-    position: relative;
 }
 
 button:hover {
-    background-color: #d1d5db;
+    background-color: lightgray;
 }
