@@ -23,7 +23,7 @@ export class UsercardComponent implements OnInit {
   }
 
   fetchData() {
-    this.http.get<Employee[]>('http://localhost:8080/employee/all')
+    this.http.get<Employee[]>('https://employeebackend-o7jy.onrender.com/employee/all')
       .subscribe(
         data => {
           this.users = data;  // Abgerufene Daten speichern

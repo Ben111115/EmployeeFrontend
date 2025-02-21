@@ -8,7 +8,7 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
 
-  private apiUrl = 'http://localhost:8080/employee';
+  private apiUrl = 'https://employeebackend-o7jy.onrender.com/employee';
 
   constructor(private http: HttpClient) {
     console.log('HttpClient dependency injected:', this.http);
